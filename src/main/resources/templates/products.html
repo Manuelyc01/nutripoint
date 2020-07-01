@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="padding-top: 2%">
+    <a class="navbar-brand" style="font-size: 26px; font-family: 'Lucida Bright'; text-align: center" href="#">Nutripoint</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 20px" href="#" >Products</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: 20px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meals</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Classic</a>
+                    <a class="dropdown-item" href="#">Vegan</a>
+                    <a class="dropdown-item" href="#">Clean</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 20px" href="#" >Contactanos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-cart-plus"th:object="${carrito}">(<label style="color: orange" th:text="${carrito}"></label>) Carrito</i></a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Encuentra lo que buscas" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+
+        </ul>
+    </div>
+
+</nav>
+<div th:switch="products"  style="margin-top: 80px">
+<tr th:each="product: ${products}">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3  th:field="${product.id_pro}"></h3>
+                        <h3 th:text="${product.name_pro}"></h3>
+                    </div>
+                    <div class="card-body">
+
+                        <img th:src="${product.image}" alt="" width="200px" height="180px">
+                    </div>
+                    <div class="card-footer text-center">
+                        <i>S/. </i><i th:text="${product.price_pro}"></i>
+                        <div>
+                            <a th:href="@{/addCarrito/{id_pro}(id_pro=${product.id_pro})}" class="btn btn-outline-info">Agregar al carrito</a>
+                            <a  class="btn btn-success">Comprar</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</tr>
+</div>
+<footer>
+
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>

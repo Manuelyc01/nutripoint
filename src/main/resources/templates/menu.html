@@ -1,0 +1,135 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+
+</head>
+<body>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        align-content: center;
+        min-width: 400px;
+        flex-wrap: wrap;
+    }
+
+    #lia{
+        margin-left: 80%;
+        margin-right: 5px;
+        position: absolute;
+        margin-top: -5px;
+    }
+
+
+</style>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="padding-top: 2%">
+    <a class="navbar-brand" style="font-size: 26px; font-family: 'Lucida Bright'; text-align: center" href="#">Nutripoint</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 20px" th:href="@{/products}" >Products</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size: 20px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meals</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Classic</a>
+                    <a class="dropdown-item" href="#">Vegan</a>
+                    <a class="dropdown-item" href="#">Clean</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 20px" href="#" >Contactanos</a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Encuentra lo que buscas" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+
+            <li id="lia" class="nav-item">
+                <a href="#"><img src="images/shopp.png" style="height: 50px;width: 50px" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <h4 th:inline="text" style="font-style: italic;padding-right: 30px;color: whitesmoke">Bienvenido [[${#httpServletRequest.remoteUser}]]!</h4>
+    <form method="post">
+        <a th:href="@{/logout}" style="color:whitesmoke;">Cerrar Sesion</a>
+    </form>
+</nav>
+
+<main role="main">
+    <div class="container-fluid" >
+        <img src="https://www.trifectanutrition.com/hubfs/TrifectaNutrition_Dec2016%20_heme/Images/Eat_like_you_train.jpg" style="margin-top: 5%; position: relative; background-size: cover;background-repeat: no-repeat;background-position: center" height="550px" width="100%" >
+        <div class="col-12" style="position: absolute; text-align: center; margin-top: -15%">
+            <h1 style="color: #e88143;font-weight: 700; line-height: 1; letter-spacing: 0;">EAT LIKE
+                <br>YOU TRAIN</h1>
+            <div class="offset-md-2 col-md-8 offset-sm-2 col-sm-8 offset-0 col-12">
+                <p style="color: #fff; font-family: Montserrat-Light; letter-spacing: 1.2px;">Nutripoint le brinda los mejores suplementos, los consejos y el apoyo de la comunidad que necesita para alcanzar sus objetivos. Su mejor opción para que pueda concentrarse en todo lo demás.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h3 style="size: 22px; text-align: center; color: cornflowerblue">PROMOCIONES DEL añoasdasdjnbfsajbfsdkbij</h3>
+
+        <div class="row">
+            <div class="col-md-4">
+
+                <h2 >Whey Standard</h2>
+                <img src="https://static2.masmusculo.com/42744/549.jpg" alt="" height="250px" width="250px">
+                <hr>
+                <p style="font-size: 22px;font-style: italic">S/. 219.00</p>
+                <hr>
+                <p><a class="btn btn-secondary" href="#" role="button">Ver más &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2 >Hydroxicut</h2>
+                <img src="https://www.labnutrition.com/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/h/y/hydroxycut-web_1_2.png" alt="" height="250px" width="250px" >
+                <hr>
+                <p style="font-size: 22px;font-style: italic">S/. 169.00</p>
+                <hr>
+                <p><a class="btn btn-secondary" href="#" role="button">Ver más &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2 >Multivitaminico</h2>
+                <img src="https://www.demusculos.com/sitio/2259-thickbox_default/animal-pak.jpg" alt="" height="250px" width="250px">
+                <hr>
+                <p style="font-size: 22px;font-style: italic">S/. 119.00</p>
+                <hr>
+                <p><a class="btn btn-secondary" href="#" role="button">Ver más &raquo;</a></p>
+            </div>
+        </div>
+
+
+        <hr>
+
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+
+    <div></div>
+    <p>&copy; Company Nutripoint 2020</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>
